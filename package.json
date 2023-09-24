@@ -42,5 +42,6 @@
     "vite-plugin-generate-file": "^0.0.4",
     "vite-plugin-singlefile": "^0.13.3",
     "vite-plugin-svgr": "^2.4.0"
-  }
+  },
+  "packageManager": "^pnpm@8.7.4"
 }
