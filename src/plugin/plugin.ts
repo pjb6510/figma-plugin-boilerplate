@@ -1,20 +1,18 @@
-import * as Networker from 'monorepo-networker';
-import { initializeNetwork } from '@common/network/init';
-import { NetworkSide } from '@common/network/sides';
-import { NetworkMessages } from '@common/network/messages';
+const getAllComponentSet = () =>
+  figma.currentPage.findAll((node) => node.type === 'COMPONENT_SET') as ComponentSetNode[];
+
+const logWithLine = (input: string) => console.log(`**********${input}*********`);
 
 async function bootstrap() {
-  initializeNetwork(NetworkSide.PLUGIN);
-
   figma.showUI(__html__, {
-    width: 600,
-    height: 600,
+    width: 200,
+    height: 200,
     title: 'PDS Figma Plugin',
   });
 
-  console.log('Bootstrapped @', Networker.Side.current.getName());
+  const handleMessage = async () => {};
 
-  NetworkMessages.HELLO_UI.send({ text: 'Hey there, UI!' });
+  figma.ui.onmessage = handleMessage;
 }
 
 bootstrap();

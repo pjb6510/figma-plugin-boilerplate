@@ -8,7 +8,13 @@ module.exports = {
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@emotion'],
+  parserOptions: {
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'], // could be tsconfig.json too
+  },
+
+  plugins: ['@typescript-eslint', 'react-refresh', '@emotion'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'no-restricted-syntax': [
@@ -26,5 +32,6 @@ module.exports = {
       },
     ],
     'prefer-arrow-callback': 'error',
+    '@typescript-eslint/strict-boolean-expressions': 'error',
   },
 };

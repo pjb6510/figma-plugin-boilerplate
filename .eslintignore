@@ -3,3 +3,4 @@ dist
 vite.config.plugin.ts
 vite.config.ui.ts
 prettier.config.mjs
+figma.manifest.ts
